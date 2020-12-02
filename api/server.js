@@ -14,13 +14,18 @@ const databaseName = 'task-manager'
 
 MongoClient.connect(connectionURL, { useUnifiedTopology: true, useNewUrlParser: true }, (error, client) => {
     if (error) {
-        return console.log('Unable to connect to database!')
+        return console.log(error)
     }
 
-    const db = client.db(databaseName)
-    
-    db.collection('users').insertOne({
-        name: 'Andrew',
-        age: 27
-    })
+  const db = client.db(databaseName)
+  
+  db.collection('employees').insertMany([{
+      name: 'Andrew1',
+      age:27
+  },
+  {
+      name:"HEy",
+      age:11
+  }]
+  ).then(result => console.log(result.ops)).catch(error => console.log(error))
 })
