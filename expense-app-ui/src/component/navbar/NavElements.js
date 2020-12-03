@@ -60,13 +60,13 @@ export const NavBtn =styled.nav`
 
 export const NavBtnLink =styled(Link)`
     border-radius:4px;
-    baclground:256ce1;
+    background:#256ce1;
     padding:10px  22px;
     color:#fff;
     border:none;
     outline:none;
     cursor:pointer;
-    transition: a;; -.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     text-decoration:none;
 
     &.hover{

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavElements'
+import Logo from '../../logo.svg'
 export class navbar extends Component {
     render() {
         return (
             <>
             <Nav>
                 <NavLink to="/">
-                    <img src={require('../../images/logo.svg')} alt='logo'/>
+                    <img src={require(Logo)} alt="logo"/>
                 </NavLink>
                 <Bars />
                 <NavMenu>
