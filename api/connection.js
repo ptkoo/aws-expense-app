@@ -1,10 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const URL = 'mongodb+srv://Htet_Naing:expense@expense.mtdqk.mongodb.net/Expense?retryWrites=true&w=majority';
+mongoose.connect('mongodb+srv://Htet_Naing:expense@expense.mtdqk.mongodb.net/Expense?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useCreateIndex: true
+})
 
-const connectDB = async () => {
-    await mongoose.connect(URL, {useNewUrlParser: true});
-    console.log('db connected!');
-};
 
-module.exports = connectDB;
+// const me = new User({
+//     userName: 'John',
+//     department: 'Design Team',
+//     role: 'Employee',
+//     password: '123'
+// })
+
+// me.save().then(() => {
+//     console.log(me)
+// }).catch((error) => {
+//     console.log('Error!', error)
+// })
