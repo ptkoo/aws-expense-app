@@ -8,8 +8,13 @@ import Financial from './pages/financial'
 import Payments from './pages/payments'
 import Requests from './pages/requests'
 
+import './App.css';
+import CAR_Form from './components/CAR_Form'
+import SEC_Form from './components/SEC_Form'
+import TR_Form from './components/TR_Form'
 function App() {
   return (
+    
     <Router>
       <Navbar />
       <Switch>
