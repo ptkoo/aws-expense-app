@@ -6,7 +6,10 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.3.0",
+    "prop-types": "^15.7.2",
+    "ra-data-json-server": "^3.10.3",
     "react": "^17.0.1",
+    "react-admin": "^3.10.3",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
@@ -50,5 +53,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3080"
+  "proxy": "http://localhost:3001"
 }

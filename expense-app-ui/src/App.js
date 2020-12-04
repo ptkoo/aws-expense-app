@@ -1,17 +1,16 @@
 import React from 'react';
-import Navbar from './component/navbar/navbar'
+import Navbar from './components/navbar'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-import Dashboard from './pages/dashboard'
-import Employee from './pages/employee'
-import Financial from './pages/financial'
-import Payments from './pages/payments'
-import Requests from './pages/requests'
+import Dashboard from './components/pages/dashboard'
+import Employee from './components/pages/employee'
+import Financial from './components/pages/financial'
+import Payments from './components/pages/payments'
+import Requests from './components/pages/requests'
 
-import './App.css';
-import CAR_Form from './components/CAR_Form'
-import SEC_Form from './components/SEC_Form'
-import TR_Form from './components/TR_Form'
+
+
+
 function App() {
   return (
     
