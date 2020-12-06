@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavElements'
-import Logo from '../../logo.svg'
-export class navbar extends Component {
+
+export class Navbar extends Component {
     render() {
         return (
             <>
             <Nav>
                 <NavLink to="/">
-                    <img src={require(Logo)} alt="logo"/>
+                   <h1>Logo</h1>
                 </NavLink>
                 <Bars />
                 <NavMenu>
@@ -36,4 +36,4 @@ export class navbar extends Component {
     }
 }
 
-export default navbar
+export default Navbar

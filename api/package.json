@@ -3,9 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "node ./bin/www",
     "server": "node src/server.js",
     "debug": "ndb ./src/server.js"
+=======
+    "start": "node test.js",
+    "dev": "nodemon test.js"
+>>>>>>> 4c31e2d85cf541c03dc3d49d924bd448a20332c2
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
