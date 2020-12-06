@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const carSchema = new mongoose.Schema(
+const reimbursementSchema = new mongoose.Schema(
     {
         reqDate: {
             type: Date,
@@ -11,22 +11,26 @@ const carSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        date: {
+            type: Date,
+            required: true
+        },
         Amount: {
             type: Number,
             required: true
         },
         recommend: {
-            type: mongoose.Schema.userName,
+            type: mongoose.Schema.ObjectId,
             ref: 'User',
             required: true
         },
         verify: {
-            type: mongoose.Schema.userName,
+            type: mongoose.Schema.ObjectId,
             ref: 'User',
             required: true
         },
         approve: {
-            type: mongoose.Schema.userName,
+            type: mongoose.Schema.ObjectId,
             ref: 'User',
             required: true
         },
@@ -41,10 +45,14 @@ const carSchema = new mongoose.Schema(
         approved: {
             type: Boolean,
             default: false
+        },
+        denied: {
+            type: Boolean,
+            default: false
         }
     }
 )
 
-const CAR = mongoose.model('CAR', carSchema)
+const REIMBURSEMENT = mongoose.model('REIMBURSEMENT', reimbursementSchema)
 
-module.exports = CAR
+module.exports = REIMBURSEMENT

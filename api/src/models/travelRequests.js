@@ -39,17 +39,17 @@ const travelRequestSchema = new mongoose.Schema(
             required: true
         },
         recommend: {
-            type: mongoose.Schema.userName,
+            type: mongoose.Schema.ObjectId,
             ref: 'User',
             required: true
         },
         verify: {
-            type: mongoose.Schema.userName,
+            type: mongoose.Schema.ObjectId,
             ref: 'User',
             required: true
         },
         approve: {
-            type: mongoose.Schema.userName,
+            type: mongoose.Schema.ObjectId,
             ref: 'User',
             required: true
         },
@@ -62,6 +62,10 @@ const travelRequestSchema = new mongoose.Schema(
             default: false
         },
         approved: {
+            type: Boolean,
+            default: false
+        },
+        denied: {
             type: Boolean,
             default: false
         }
