@@ -48,7 +48,11 @@ const userSchema = new mongoose.Schema(
             type: String
         }
     }
-}
+    },
+    {
+      toJSON: { virtuals: true},
+      toObject: { virtuals: true}
+    }
 )
 
 

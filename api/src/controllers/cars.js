@@ -35,7 +35,10 @@ exports.getAllCars = catchAsync(async (req, res, next) => {
 
 exports.getCar = catchAsync(async (req, res, next) => {
     
-        const car = await Car.findById(req.params.id)
+        const car = await Car.findById(req.params.id).populate({
+            path: 'recommend verify approve',
+            select: '-__v'
+        })
         
         if (!car) {
     return next(new AppError('No req found with that ID', 404))

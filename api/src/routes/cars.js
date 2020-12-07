@@ -13,6 +13,6 @@ carRouter
     .route('/:id')
     .get(carController.getCar)
     .patch(carController.updateCar)
-    .delete(carController.deleteCar)
+    .delete(authController.protect, authController.restrictTo('Manager'), carController.deleteCar)
 
 module.exports = carRouter;

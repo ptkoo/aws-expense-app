@@ -7,6 +7,7 @@ const authController = require('../controllers/authController')
 userRouter
     .post('/signup', authController.createUser)
     .post('/login', authController.login)
+    .patch('/updatePassword', authController.protect, authController.updatePassword)
 
 userRouter
     .route('/')

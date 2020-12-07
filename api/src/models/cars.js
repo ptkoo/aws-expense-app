@@ -2,6 +2,11 @@ const mongoose = require('mongoose')
 
 const carSchema = new mongoose.Schema(
     {
+        requestorId: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'User',
+            required: true
+        },
         reqDate: {
             type: Date,
             default: Date.now(),
@@ -46,6 +51,10 @@ const carSchema = new mongoose.Schema(
             type: Boolean,
             default: false
         }
+    },
+    {
+      toJSON: { virtuals: true},
+      toObject: { virtuals: true}
     }
 )
 

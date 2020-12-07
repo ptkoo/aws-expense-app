@@ -14,12 +14,17 @@
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
+    "express-mongo-sanitize": "^2.0.1",
+    "express-rate-limit": "^5.2.3",
+    "helmet": "^4.2.0",
+    "hpp": "^0.2.3",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.1",
     "morgan": "^1.9.1",
-    "validator": "^13.5.1"
+    "validator": "^13.5.1",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "eslint": "^7.14.0",
