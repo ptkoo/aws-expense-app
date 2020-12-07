@@ -11,6 +11,7 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp = require('hpp')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
@@ -28,6 +29,7 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again in an hour!'
 });
 app.use('/api', limiter);
+app.use(cookieParser())
 app.use(mongoSanitize())
 app.use(xss())
 app.use(hpp({
