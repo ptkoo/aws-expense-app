@@ -6,17 +6,19 @@ const userRouter = require('./routes/users')
 const carRouter = require('./routes/cars')
 const reimbursementRouter = require('./routes/reimbursements')
 const travelReqRouter = require('./routes/travelRequests')
+const reqRouter = require('./routes/req')
 const rateLimit = require('express-rate-limit')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
 
 const app = express()
 
 app.use(express.json())
-
+app.use(cors())
 app.use(helmet())
 
 if(process.env.NODE_ENV === 'development') {
@@ -40,6 +42,7 @@ app.use('/api/v1/users', userRouter)
 app.use('/api/v1/cars', carRouter)
 app.use('/api/v1/reimbursements', reimbursementRouter)
 app.use('/api/v1/travelreqs', travelReqRouter)
+app.use('/api/v1/reqs', reqRouter)
 
 app.all('*', (req, res, next) => {
     

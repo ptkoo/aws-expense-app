@@ -117,6 +117,24 @@ userSchema.pre(/^find/, function(next) {
   next();
 });
 
+userSchema.virtual('cars', {
+  ref: 'CAR',
+  foreignField: 'requestorId',
+  localField: '_id'
+});
+
+userSchema.virtual('reimbursements', {
+  ref: 'REIMBURSEMENT',
+  foreignField: 'requestorId',
+  localField: '_id'
+});
+
+userSchema.virtual('travelReqs', {
+  ref: 'TRAVEL',
+  foreignField: 'requestorId',
+  localField: '_id'
+});
+
 
 userSchema.methods.correctPassword = async function(
   candidatePassword,
