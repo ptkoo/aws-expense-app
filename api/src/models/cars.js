@@ -9,11 +9,15 @@ const carSchema = new mongoose.Schema(
         },
         reqDate: {
             type: Date,
-            default: Date.now(),
-            select: false
+            default: Date.now()
         },
         description: {
             type: String,
+            required: true
+        },
+        paymentMethod: {
+            type: String,
+            enum: ['cash', 'AYA'],
             required: true
         },
         Amount: {
@@ -57,6 +61,21 @@ const carSchema = new mongoose.Schema(
       toObject: { virtuals: true}
     }
 )
+
+carSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'recommend',
+    select: 'userName'
+  }).populate({
+    path: 'verify',
+    select: 'userName'
+  }).populate({
+      path: 'approve',
+    select: 'userName'
+  });
+  next();
+});
+
 
 const CAR = mongoose.model('CAR', carSchema)
 

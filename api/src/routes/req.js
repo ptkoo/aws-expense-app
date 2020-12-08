@@ -3,9 +3,12 @@ const reqRouter = express.Router();
 const reqController = require('../controllers/req')
 const authController = require('../controllers/authController')
 
+
+reqRouter.use(authController.isLoggedIn)
 //Routes
+ 
 reqRouter
     .route('/')
-    .get(authController.protect, reqController.getAllReqs)
+    .get(reqController.getAllReqs)
 
 module.exports = reqRouter;

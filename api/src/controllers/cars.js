@@ -5,6 +5,8 @@ const AppError = require('../utils/appError');
 
 
 exports.createCar = catchAsync(async (req, res, next) => {
+
+    req.body.requestorId = req.user.id
     const car = await Car.create(req.body)
 
         res.status(201).json({

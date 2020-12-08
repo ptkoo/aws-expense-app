@@ -10,7 +10,6 @@ const reimbursementSchema = new mongoose.Schema(
         reqDate: {
             type: Date,
             default: Date.now(),
-            select: false
         },
         description: {
             type: String,

@@ -5,7 +5,6 @@ const AppError = require('../utils/appError');
 
 
 exports.getAllReqs = catchAsync(async (req, res, next) => {
-    
         const request = await User.findById(req.user.id).populate(['cars', 'reimbursements', 'travelReqs'])
         
         if (!request) {
@@ -19,3 +18,4 @@ exports.getAllReqs = catchAsync(async (req, res, next) => {
             }
         })
 })
+

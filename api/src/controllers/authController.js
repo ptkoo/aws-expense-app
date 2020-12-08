@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const Car = require('../models/cars')
 const User = require('../models/users');
 const AppError = require('../utils/appError')
 const catchAsync = require('../utils/catchAsync');
@@ -103,6 +104,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 exports.isLoggedIn = async (req, res, next) => {
   if (req.cookies.jwt) {
     try {
+      console.log('there is cookie')
       // 1) verify token
       const decoded = await promisify(jwt.verify)(
         req.cookies.jwt,
@@ -122,6 +124,8 @@ exports.isLoggedIn = async (req, res, next) => {
 
       // THERE IS A LOGGED IN USER
       res.locals.user = currentUser;
+      req.user = currentUser;
+      console.log(req.user)
       return next();
     } catch (err) {
       return next();
