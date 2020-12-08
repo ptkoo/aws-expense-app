@@ -7,9 +7,13 @@ const travelRequestSchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
+        type: {
+            type: String,
+            default: 'travelRequests'
+        },
         reqDate: {
             type: Date,
-            default: Date.now(),
+            default: new Date().getTime()
         },
         travelType: {
             type: String,

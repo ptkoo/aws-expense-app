@@ -1,7 +1,9 @@
 const express = require('express');
 const reimbursementRouter = express.Router();
 const reimbursementController = require('../controllers/reimbursements')
+const authController = require('../controllers/authController')
 
+reimbursementRouter.use(authController.isLoggedIn)
 //Routes
 reimbursementRouter
     .route('/')

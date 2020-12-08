@@ -1,7 +1,9 @@
 const express = require('express');
 const travelReqRouter = express.Router();
 const travelReqController = require('../controllers/travelRequests')
+const authController = require('../controllers/authController')
 
+travelReqRouter.use(authController.isLoggedIn)
 //Routes
 travelReqRouter
     .route('/')

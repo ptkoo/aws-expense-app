@@ -5,6 +5,7 @@ const AppError = require('../utils/appError');
 
 
 exports.createReimbursement = catchAsync(async (req, res, next) => {
+    req.body.requestorId = req.user.id
     const reimbursement = await Reimbursement.create(req.body)
 
         res.status(201).json({

@@ -5,6 +5,7 @@ const AppError = require('../utils/appError');
 
 
 exports.createTravelReq = catchAsync(async (req, res, next) => {
+    req.body.requestorId = req.user.id
     const travelReq = await TravelReq.create(req.body)
 
         res.status(201).json({

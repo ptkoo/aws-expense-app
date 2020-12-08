@@ -7,9 +7,13 @@ const reimbursementSchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
+        type: {
+            type: String,
+            default: 'reimbursements'
+        },
         reqDate: {
             type: Date,
-            default: Date.now(),
+            default: new Date().getTime()
         },
         description: {
             type: String,

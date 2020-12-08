@@ -7,9 +7,13 @@ const carSchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
+        type: {
+            type: String,
+            default: 'cars'
+        },
         reqDate: {
             type: Date,
-            default: Date.now()
+            default: new Date().getTime()
         },
         description: {
             type: String,
