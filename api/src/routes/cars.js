@@ -4,7 +4,7 @@ const carController = require('../controllers/cars')
 const authController = require('../controllers/authController')
 
 
-carRouter.use(authController.isLoggedIn)
+//carRouter.use(authController.isLoggedIn)
 //Routes
 carRouter
     .route('/')
