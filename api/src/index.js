@@ -14,12 +14,14 @@ const xss = require('xss-clean')
 const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true };
 const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(helmet())
 
 if(process.env.NODE_ENV === 'development') {
