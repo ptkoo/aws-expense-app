@@ -17,7 +17,7 @@ const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 var corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://giri-expenses.herokuapp.com',
     credentials: true };
 const app = express()
 
@@ -49,7 +49,7 @@ app.use('/api/v1/cars', carRouter)
 app.use('/api/v1/reimbursements', reimbursementRouter)
 app.use('/api/v1/travelreqs', travelReqRouter)
 app.use('/api/v1/reqs', reqRouter)
-app.use(('/api/v1/payment', paymentRouter))
+app.use('/api/v1/payment', paymentRouter)
 
 app.all('*', (req, res, next) => {
     
