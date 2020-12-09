@@ -11,4 +11,8 @@ reqRouter
     .route('/')
     .get(reqController.getAllReqs)
 
+reqRouter
+    .route('/approve')
+    .get(reqController.getApproveReqs)
+
 module.exports = reqRouter;

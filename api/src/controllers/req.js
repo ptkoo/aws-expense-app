@@ -19,3 +19,18 @@ exports.getAllReqs = catchAsync(async (req, res, next) => {
         })
 })
 
+exports.getApproveReqs = catchAsync(async (req, res, next) => {
+        const request = await User.findById(req.user.id).populate(['carsApr', 'reimbursementsApr', 'travelReqsApr'])
+        
+        if (!request) {
+    return next(new AppError('No req found with that ID', 404))
+    }
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                request
+            }
+        })
+})
+
