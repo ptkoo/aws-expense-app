@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./src/server.js",
     "server": "node src/server.js",
     "debug": "ndb ./src/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -39,5 +40,8 @@
     "ndb": "^1.1.5",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }

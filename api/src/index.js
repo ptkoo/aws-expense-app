@@ -10,6 +10,7 @@ const reqRouter = require('./routes/req')
 const rateLimit = require('express-rate-limit')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
+const compression = require('compression')
 const xss = require('xss-clean')
 const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
@@ -39,6 +40,8 @@ app.use(xss())
 app.use(hpp({
     whitelist : ['']
 }))
+
+app.use(compression())
 //Routes
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/cars', carRouter)
