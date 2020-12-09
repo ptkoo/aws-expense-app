@@ -27,6 +27,11 @@ const reimbursementSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
+        paymentMethod: {
+            type: String,
+            enum: ['cash', 'AYA'],
+            required: true
+        },
         recommend: {
             type: mongoose.Schema.ObjectId,
             ref: 'User',
