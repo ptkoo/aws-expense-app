@@ -3,6 +3,7 @@ const userRouter = express.Router();
 const userController = require('../controllers/users')
 const authController = require('../controllers/authController')
 
+userRouter.use(authController.isLoggedIn)
 //Routes
 userRouter
     .post('/signup', authController.createUser)
