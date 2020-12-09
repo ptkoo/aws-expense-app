@@ -16,7 +16,7 @@ const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 var corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://polar-dawn-62299.herokuapp.com',
     credentials: true };
 const app = express()
 
