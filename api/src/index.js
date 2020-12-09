@@ -7,6 +7,7 @@ const carRouter = require('./routes/cars')
 const reimbursementRouter = require('./routes/reimbursements')
 const travelReqRouter = require('./routes/travelRequests')
 const reqRouter = require('./routes/req')
+const paymentRouter = require('./routes/payment')
 const rateLimit = require('express-rate-limit')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
@@ -16,7 +17,7 @@ const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 var corsOptions = {
-    origin: 'https://polar-dawn-62299.herokuapp.com',
+    origin: 'http://localhost:3000',
     credentials: true };
 const app = express()
 
@@ -48,6 +49,7 @@ app.use('/api/v1/cars', carRouter)
 app.use('/api/v1/reimbursements', reimbursementRouter)
 app.use('/api/v1/travelreqs', travelReqRouter)
 app.use('/api/v1/reqs', reqRouter)
+app.use(('/api/v1/payment', paymentRouter))
 
 app.all('*', (req, res, next) => {
     
