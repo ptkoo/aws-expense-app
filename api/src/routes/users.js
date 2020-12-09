@@ -3,16 +3,16 @@ const userRouter = express.Router();
 const userController = require('../controllers/users')
 const authController = require('../controllers/authController')
 
-userRouter.use(authController.isLoggedIn)
 //Routes
 userRouter
     .post('/signup', authController.createUser)
     .post('/login', authController.login)
     .patch('/updatePassword', authController.protect, authController.updatePassword)
 
+    userRouter.use(authController.isLoggedIn)
 userRouter
     .route('/')
-    .get(userController.getAllUsers)
+    .get(authController.restrictTo('Manager'), userController.getAllUsers)
 
 userRouter
     .route('/:id')
