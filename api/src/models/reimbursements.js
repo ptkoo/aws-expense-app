@@ -70,6 +70,20 @@ const reimbursementSchema = new mongoose.Schema(
     }
 )
 
+reimbursementSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'recommend',
+    select: 'userName'
+  }).populate({
+    path: 'verify',
+    select: 'userName'
+  }).populate({
+      path: 'approve',
+    select: 'userName'
+  });
+  next();
+});
+
 const REIMBURSEMENT = mongoose.model('REIMBURSEMENT', reimbursementSchema)
 
 module.exports = REIMBURSEMENT

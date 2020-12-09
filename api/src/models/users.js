@@ -153,6 +153,42 @@ userSchema.virtual('travelReqsApr', {
   localField: '_id'
 });
 
+userSchema.virtual('carsVer', {
+  ref: 'CAR',
+  foreignField: 'verify',
+  localField: '_id'
+});
+
+userSchema.virtual('reimbursementsVer', {
+  ref: 'REIMBURSEMENT',
+  foreignField: 'verify',
+  localField: '_id'
+});
+
+userSchema.virtual('travelReqsVer', {
+  ref: 'TRAVEL',
+  foreignField: 'verify',
+  localField: '_id'
+});
+
+userSchema.virtual('carsRe', {
+  ref: 'CAR',
+  foreignField: 'recommend',
+  localField: '_id'
+});
+
+userSchema.virtual('reimbursementsRe', {
+  ref: 'REIMBURSEMENT',
+  foreignField: 'recommend',
+  localField: '_id'
+});
+
+userSchema.virtual('travelReqsRe', {
+  ref: 'TRAVEL',
+  foreignField: 'recommend',
+  localField: '_id'
+});
+
 
 userSchema.methods.correctPassword = async function(
   candidatePassword,

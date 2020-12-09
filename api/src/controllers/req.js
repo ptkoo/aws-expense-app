@@ -34,3 +34,33 @@ exports.getApproveReqs = catchAsync(async (req, res, next) => {
         })
 })
 
+exports.getVerifyReqs = catchAsync(async (req, res, next) => {
+        const request = await User.findById(req.user.id).populate(['carsVer', 'reimbursementsVer', 'travelReqsVer'])
+        
+        if (!request) {
+    return next(new AppError('No req found with that ID', 404))
+    }
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                request
+            }
+        })
+})
+
+exports.getRecommendReqs = catchAsync(async (req, res, next) => {
+        const request = await User.findById(req.user.id).populate(['carsRe', 'reimbursementsRe', 'travelReqsRe'])
+        
+        if (!request) {
+    return next(new AppError('No req found with that ID', 404))
+    }
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                request
+            }
+        })
+})
+

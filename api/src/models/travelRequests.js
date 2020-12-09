@@ -89,6 +89,20 @@ const travelRequestSchema = new mongoose.Schema(
     }
 )
 
+travelRequestSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'recommend',
+    select: 'userName'
+  }).populate({
+    path: 'verify',
+    select: 'userName'
+  }).populate({
+      path: 'approve',
+    select: 'userName'
+  });
+  next();
+});
+
 const TRAVEL = mongoose.model('TRAVEL', travelRequestSchema)
 
 module.exports = TRAVEL

@@ -15,4 +15,12 @@ reqRouter
     .route('/approve')
     .get(reqController.getApproveReqs)
 
+reqRouter
+    .route('/verify')
+    .get(reqController.getVerifyReqs)
+
+reqRouter
+    .route('/recommend')
+    .get(reqController.getRecommendReqs)
+
 module.exports = reqRouter;
