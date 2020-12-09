@@ -47,7 +47,7 @@ app.use(compression())
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/cars', carRouter)
 app.use('/api/v1/reimbursements', reimbursementRouter)
-app.use('/api/v1/travelreqs', travelReqRouter)
+app.use('/api/v1/travelRequests', travelReqRouter)
 app.use('/api/v1/reqs', reqRouter)
 app.use('/api/v1/payment', paymentRouter)
 
