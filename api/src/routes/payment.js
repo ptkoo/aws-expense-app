@@ -4,10 +4,10 @@ const paymentController = require('../controllers/payment.js')
 const authController = require('../controllers/authController')
 
 
-//paymentRouter.use(authController.isLoggedIn)
+// paymentRouter.use(authController.isLoggedIn)
 //Routes
 paymentRouter
     .route('/')
-    .post(paymentController.postPayment)
+    .post(authController.isLoggedIn,paymentController.postPayment)
 
 module.exports = paymentRouter;

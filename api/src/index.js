@@ -17,7 +17,7 @@ const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 var corsOptions = {
-    origin: 'https://giri-expenses.herokuapp.com',
+    origin: 'http://localhost:3000',
     credentials: true };
 const app = express()
 

@@ -5,6 +5,10 @@ const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema(
     {
+    joinDate: {
+            type: Date,
+            default: new Date().getTime()
+    },
     userName: {
         type: String,
         required: true,
@@ -43,10 +47,11 @@ const userSchema = new mongoose.Schema(
         type: Boolean,
         required: true
     },
-    payment: {
-        accountNo: {
-            type: String
-        }
+    accountNo: {
+        type: String
+    },
+    accPass: {
+        type: String 
     }
     },
     {

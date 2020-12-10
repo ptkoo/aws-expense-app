@@ -58,6 +58,10 @@ const carSchema = new mongoose.Schema(
         denied: {
             type: Boolean,
             default: false
+        },
+        paid: {
+            type: Boolean,
+            default: false
         }
     },
     {
